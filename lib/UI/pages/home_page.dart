@@ -8,11 +8,15 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          decoration: BoxDecoration(
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/Homepage.dart'),
+              image: AssetImage('assets/Homepage.png'),
+              fit: BoxFit.cover,
             ),
           ),
+          child: Center(),
         ),
       ),
     );

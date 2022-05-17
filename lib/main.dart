@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => const SplashScreenPage(),
         '/onboarding': (context) => const OnboardingPage(),
         '/signin': (context) => const SignIn(),
+        '/home': (context) => const HomePage(),
       },
       // home: Scaffold(
       //   body: Center(

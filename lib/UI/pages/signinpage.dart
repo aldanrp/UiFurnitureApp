@@ -179,6 +179,8 @@ class _SignInState extends State<SignIn> {
                 toastDuration: const Duration(seconds: 2),
                 gravity: ToastGravity.BOTTOM,
               );
+            } else {
+              Navigator.pushNamed(context, '/home');
             }
           });
         },
