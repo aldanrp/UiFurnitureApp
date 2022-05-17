@@ -13,6 +13,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        androidOverscrollIndicator: AndroidOverscrollIndicator.stretch,
+      ),
       routes: {
         '/': (context) => const SplashScreenPage(),
         '/onboarding': (context) => const OnboardingPage(),
