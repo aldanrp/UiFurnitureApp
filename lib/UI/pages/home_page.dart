@@ -14,7 +14,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        height: MediaQuery.of(context).size.height,
+        height: MediaQuery.of(context).size.height - 50,
         width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
           image: DecorationImage(
@@ -199,6 +199,78 @@ class _HomePageState extends State<HomePage> {
                       color:
                           _getIndexcarusel == 2 ? kBlackColor : kLineDarkColor,
                     ),
+                  ),
+                ],
+              ),
+            ),
+
+            //TODO : Popular section
+            Container(
+              margin: const EdgeInsets.only(top: 24),
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.vertical(
+                  top: Radius.circular(14),
+                ),
+                color: kWhiteColor,
+              ),
+              child: Column(
+                children: [
+                  Container(
+                    margin: const EdgeInsets.only(
+                      top: 24,
+                      left: 24,
+                      right: 24,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Popular",
+                          style: blackTextStyle.copyWith(
+                            fontSize: 24,
+                            fontWeight: semiBold,
+                          ),
+                        ),
+                        Text(
+                          "Show All",
+                          style: greyTextStyle,
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  SizedBox(
+                    height: 300,
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: const [
+                          PopularCard(
+                            title: "Poan Chair",
+                            price: 34,
+                            urlImage: 'assets/image_product_popular1.png',
+                            isWishlist: true,
+                          ),
+                          PopularCard(
+                            title: "Poan Chair",
+                            price: 34,
+                            urlImage: 'assets/image_product_popular2.png',
+                            isWishlist: false,
+                          ),
+                          PopularCard(
+                            title: "Poan Chair",
+                            price: 34,
+                            urlImage: 'assets/image_product_popular3.png',
+                            isWishlist: false,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
                   ),
                 ],
               ),
