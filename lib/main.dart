@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
         '/onboarding': (context) => const OnboardingPage(),
         '/signin': (context) => const SignIn(),
         '/home': (context) => const MyPages(),
+        '/search': (context) => const SearchPage(),
       },
       // home: Scaffold(
       //   body: Center(

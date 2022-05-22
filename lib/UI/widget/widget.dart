@@ -5,3 +5,4 @@ part 'onboardingwidget.dart';
 part './Global_widget/titile_widget.dart';
 part './Homewidget/home_carousel_card.dart';
 part './Homewidget/home_popular_card.dart';
+part './Searchwidget/recommend_items_widget.dart';

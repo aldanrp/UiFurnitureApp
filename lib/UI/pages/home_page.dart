@@ -57,46 +57,51 @@ class _HomePageState extends State<HomePage> {
             ),
 
             //* SEARCHBAR
-            Container(
-              height: 56,
-              margin: const EdgeInsets.only(
-                top: 30,
-                left: 24,
-                right: 24,
-              ),
-              padding: const EdgeInsets.symmetric(vertical: 5),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(14),
-                color: kWhiteColor,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    height: 42,
-                    width: MediaQuery.of(context).size.width / 1.8,
-                    padding: const EdgeInsets.all(10),
-                    child: Text(
-                      "Search Furniture",
-                      style: greyTextStyle.copyWith(
-                          fontSize: 16, fontWeight: semiBold),
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  SizedBox(
-                    height: 44,
-                    width: 50,
-                    child: Center(
-                      child: Image.asset(
-                        "assets/icon_search.png",
-                        width: 24,
-                        color: kGreyColor,
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/search');
+              },
+              child: Container(
+                height: 56,
+                margin: const EdgeInsets.only(
+                  top: 30,
+                  left: 24,
+                  right: 24,
+                ),
+                padding: const EdgeInsets.symmetric(vertical: 5),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(14),
+                  color: kWhiteColor,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      height: 42,
+                      width: MediaQuery.of(context).size.width / 1.8,
+                      padding: const EdgeInsets.all(10),
+                      child: Text(
+                        "Search Furniture",
+                        style: greyTextStyle.copyWith(
+                            fontSize: 16, fontWeight: semiBold),
                       ),
                     ),
-                  )
-                ],
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    SizedBox(
+                      height: 44,
+                      width: 50,
+                      child: Center(
+                        child: Image.asset(
+                          "assets/icon_search.png",
+                          width: 24,
+                          color: kGreyColor,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
             const SizedBox(

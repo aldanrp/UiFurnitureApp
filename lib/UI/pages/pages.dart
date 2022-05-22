@@ -17,3 +17,4 @@ part 'signinpage.dart';
 part 'home_page.dart';
 part 'profile_page.dart';
 part 'wishlist_page.dart';
+part 'search_page.dart';
