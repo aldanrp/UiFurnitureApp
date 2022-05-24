@@ -1,30 +1,40 @@
 part of 'pages.dart';
 
 class MyPages extends StatefulWidget {
-  const MyPages({Key? key}) : super(key: key);
+  final int currentIndex;
+  const MyPages({Key? key, required this.currentIndex}) : super(key: key);
 
   @override
   State<MyPages> createState() => _MyPagesState();
 }
 
 class _MyPagesState extends State<MyPages> {
-  int currentIndex = 0;
+  int _currentIndex = 0;
+  bool pageSelect = true;
 
-  void changePage(int index) {
-    setState(() {
-      currentIndex = index;
-    });
+  @override
+  void initState() {
+    super.initState();
+    if (pageSelect == true) {
+      _currentIndex = widget.currentIndex;
+    }
   }
 
   Widget _getWidget() {
-    if (currentIndex == 1) {
-      return const ProfilePage();
+    if (_currentIndex == 1) {
+      return const SearchPage();
       // SearchPage(
       //   hasInternet: hasInternet,
       //   hasconnection: hasconnection(),
       // );
-    } else if (currentIndex == 2) {
+    } else if (_currentIndex == 2) {
       return const WishListPage();
+      // Favoritepage(
+      //   hasInternet: hasInternet,
+      //   hasconnection: hasconnection(),
+      // );
+    } else if (_currentIndex == 3) {
+      return const ProfilePage();
       // Favoritepage(
       //   hasInternet: hasInternet,
       //   hasconnection: hasconnection(),
@@ -54,10 +64,12 @@ class _MyPagesState extends State<MyPages> {
           showUnselectedLabels: false,
           type: BottomNavigationBarType.fixed,
           backgroundColor: kBlackColor,
-          currentIndex: currentIndex,
+          currentIndex:
+              pageSelect == true ? widget.currentIndex : _currentIndex,
           onTap: (index) {
             setState(() {
-              currentIndex = index;
+              _currentIndex = index;
+              pageSelect = false;
             });
           },
           items: const [

@@ -59,7 +59,11 @@ class _HomePageState extends State<HomePage> {
             //* SEARCHBAR
             GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, '/search');
+                Navigator.pushNamed(
+                  context,
+                  '/home',
+                  arguments: 1,
+                );
               },
               child: Container(
                 height: 56,

@@ -16,12 +16,23 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         androidOverscrollIndicator: AndroidOverscrollIndicator.stretch,
       ),
+      onGenerateRoute: (_) {
+        if (_.name == '/home') {
+          final String args = _.arguments.toString();
+          return PageRouteBuilder(
+            pageBuilder: (_, __, ___) => MyPages(
+              currentIndex: int.parse(args),
+            ),
+          );
+        }
+        return null;
+      },
       routes: {
         '/': (context) => const SplashScreenPage(),
         '/onboarding': (context) => const OnboardingPage(),
         '/signin': (context) => const SignIn(),
-        '/home': (context) => const MyPages(),
         '/search': (context) => const SearchPage(),
+        '/search-result': (context) => const SearchResultPage(),
       },
       // home: Scaffold(
       //   body: Center(

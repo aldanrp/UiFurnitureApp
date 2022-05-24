@@ -180,7 +180,11 @@ class _SignInState extends State<SignIn> {
                 gravity: ToastGravity.BOTTOM,
               );
             } else {
-              Navigator.pushNamed(context, '/home');
+              Navigator.pushNamed(
+                context,
+                '/home',
+                arguments: 0,
+              );
             }
           });
         },
